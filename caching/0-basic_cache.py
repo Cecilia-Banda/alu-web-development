@@ -7,7 +7,7 @@ from base_caching import BaseCaching
 
 
 class BasicCache(BaseCaching):
-    """ BasicCache define a intro to use cache
+    """ BasicCache defines a simple caching system
 
       To use:
       >>> my_cache = BasicCache()
@@ -23,20 +23,28 @@ class BasicCache(BaseCaching):
     """
 
     def put(self, key, item):
-        ''' self descriptive '''
+        """
+        Add an item to the cache.
+
+        Args:
+            key: Key to identify the item.
+            item: Value to be stored in the cache.
+
+        Returns:
+            None
+        """
         if key and item:
             self.cache_data[key] = item
 
     def get(self, key):
         """
-            modify cache data
+        Get an item from the cache.
 
-            Args:
-                key: of the dict
+        Args:
+            key: Key to retrieve the item.
 
-            Return:
-                value of the key
+        Returns:
+            Value of the key in the cache or None if key is not found.
         """
-
-        valuecache = self.cache_data.get(key)
-        return valuecache
+        value_cache = self.cache_data.get(key)
+        return value_cache
